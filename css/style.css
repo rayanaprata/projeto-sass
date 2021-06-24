@@ -1,17 +1,87 @@
-/* Error: expected "{".
- *    ,
- * 90 | *∕
- *    |   ^
- *    '
- *   scss\style.scss 90:3  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 90 \2502  */\a    \2502    ^\a    \2575 \a   scss\\style.scss 90:3  root stylesheet';
+@charset "UTF-8";
+/* declarando variáveis do sass
+exemplo de criação: $<nome-da-variavel>: cor; */
+.header {
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+.header__logo {
+  text-align: center;
+}
+
+.header__logo .header__img {
+  max-width: 350px;
+}
+
+.header__menu .menu__list {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eaeaeb;
+  border-bottom: 1px solid #eaeaeb;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 20px 0;
+}
+
+.header__menu .menu__list .menu__links {
+  position: relative;
+}
+
+/* :not(:last-child) tira o tracinho do último item do menu :) */
+.header__menu .menu__list .menu__links:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -3px;
+  margin: auto;
+  height: 15px;
+  width: 1px;
+  background-color: #eaeaeb;
+}
+
+.header__menu .menu__list .menu__links .menu__link {
+  padding: 0 25px;
+  color: #464646;
+}
+
+.header__menu .menu__list .menu__links .menu__link:hover {
+  color: #A050BE;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* Este treco de estilo posiciona o footer na parte de baixo da tela */
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer .footer__logo {
+  max-width: 100px;
+}
+
+.footer .footer__txt {
+  font-size: 14px;
+}
+
+/* Aula 01:
+
+ - O que é Sass e porque usá-lo;
+Sass é um pré-processador CSS, que permite adicionar funções que não são possíveis no CSS puro. As principais vantagens de usar o Sass são a facilidade na escrita e sintaxe, e a possibilidade de adicionar funções, mixins, nestings, seletores e herança.
+
+ - Como instalar o Sass no seu projeto;
+Para instalar o Sass é necessário possuir o node na sua máquina, e também um editor de código. Depois, basta digitar o comando "npm install -g sass”.
+
+ - Como criar e usar variáveis no Sass;
+Para criarmos variáveis usamos o símbolo $, junto dele o nome da variável, e depois dos dois pontos o valor que queremos. E para usá-las simplesmente chamamos o seu nome. Por exemplo: $branco: #fff; para criar e, para usá-la, chamaremos ela dentro da propriedade css, como por exemplo: color: $branco;
+
+ - Como comentar o código no Sass;
+Como em outras linguagens de programação, também é possível fazer comentários no Sass. Existem dois tipos: com duas barras (//) ou entre barras e asteriscos, a diferença entre eles é que no primeiro caso o comentário é por linha, ou seja, caso o enter seja pressionado, o comentário não será continuado, já o segundo permite comentário em múltiplas linhas. 
+*/
+
+/*# sourceMappingURL=style.css.map */
